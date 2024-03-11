@@ -1,19 +1,24 @@
 import Box from "@mui/material/Box";
 import CustomPasswordField from "../../components/CustomPasswordField";
 import Link from "@mui/material/Link";
-import Typography from "@mui/material/Typography";
 import { Control } from "react-hook-form";
 import { LoginFormInputs } from "./Login";
 import { useWatch } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const PasswordBlock = ({ control }: { control: Control<LoginFormInputs> }) => {
   const email = useWatch({
     control,
     name: "email",
   });
+  const navigate = useNavigate();
   if (!email) {
     return null;
   }
+  function onForgotClick() {
+    navigate("/forgot");
+  }
+
   return (
     <>
       <CustomPasswordField
@@ -23,10 +28,14 @@ const PasswordBlock = ({ control }: { control: Control<LoginFormInputs> }) => {
         sx={{ mt: 3 }}
       />
       <Box sx={{ mt: 2, width: "100%", textAlign: "right" }}>
-        <Link href="/forgot" sx={{ fontSize: "15px" }} underline="hover">
-          <Typography noWrap={true} sx={{ fontSize: "15px" }}>
-            Forgot your password?
-          </Typography>
+        <Link
+          sx={{ fontSize: "15px", cursor: "pointer" }}
+          underline="hover"
+          variant="button"
+          onClick={onForgotClick}
+          textTransform="none"
+        >
+          Forgot your password?
         </Link>
       </Box>
     </>
