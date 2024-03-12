@@ -29,11 +29,13 @@ const PasswordBlock = ({ control }: { control: Control<LoginFormInputs> }) => {
       />
       <Box sx={{ mt: 2, width: "100%", textAlign: "right" }}>
         <Link
-          sx={{ fontSize: "15px", cursor: "pointer" }}
+          sx={{ cursor: "pointer" }}
           underline="hover"
           variant="button"
           onClick={onForgotClick}
           textTransform="none"
+          fontSize={15}
+          lineHeight={1}
         >
           Forgot your password?
         </Link>

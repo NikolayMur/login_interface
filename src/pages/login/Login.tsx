@@ -121,7 +121,7 @@ export default function Login() {
               type="submit"
               fullWidth
               variant="customContained"
-              sx={{ mt: 3.5, mb: 2.5 }}
+              sx={{ mt: 4, mb: 2.5 }}
             >
               Log in to Qencode
             </Button>
@@ -132,8 +132,16 @@ export default function Login() {
                 </Typography>
               </Grid>
               <Grid item>
-                <Link href="#" underline="hover">
-                  <Typography sx={{ fontSize: "15px" }}>Sign up</Typography>
+                <Link
+                  sx={{ cursor: "pointer" }}
+                  underline="hover"
+                  variant="button"
+                  onClick={() => {}}
+                  textTransform="none"
+                  fontSize={15}
+                  lineHeight={1}
+                >
+                  Sign up
                 </Link>
               </Grid>
             </Grid>

@@ -56,6 +56,9 @@ export const customTheme = createTheme({
               color: "#FFFFFF",
               backgroundColor: "#316FEA",
               borderRadius: "6px",
+              ":hover":{
+                backgroundColor: "#6b96ec",
+              }
             },
           },
         ],
